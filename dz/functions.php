@@ -1,5 +1,20 @@
 <?php
 
+
+	function editArticle(int $id, string $newTitle, string $newContent) : bool {
+		
+		$articles = getArticles();
+		$flag = true;
+
+		isset($articles[$id]) && $newTitle != '' && $newContent != '' ? $articles[$id] = [
+			'title' => $newTitle,
+			'content' => $newContent
+		] : $flag = false;
+		
+		saveArticles($articles);
+		return $flag;
+
+	}
 	// your functions may be here
 
 	/* start --- black box */
@@ -10,7 +25,7 @@
 	function addArticle(string $title, string $content) : bool{
 		$articles = getArticles();
 
-		$lastId = end($articles)['id'];
+		$lastId = end($articles)['id'] ?? '';
 		$id = $lastId + 1;
 
 		$articles[$id] = [
