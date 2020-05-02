@@ -1,6 +1,10 @@
 <?php
 
-    $arr = array("red", "green", "orange", "blue");
+    $arr = array("red", "green", "orange", "blue","yellow");
+
+    $arr = array_unique($arr);
+    shuffle($arr);   
+    
 
 ?>
 <style>
