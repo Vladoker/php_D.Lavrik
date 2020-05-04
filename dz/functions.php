@@ -19,7 +19,11 @@
 
 	/* start --- black box */
 	function getArticles() : array{
-		return json_decode(file_get_contents('db/articles.json'), true);
+		$content = file_get_contents('db/articles.json');
+		if($content != false){
+			return json_decode($content, true);
+		}
+		return [];
 	}
 
 	function addArticle(string $title, string $content) : bool{

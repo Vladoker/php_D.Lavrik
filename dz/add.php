@@ -6,13 +6,15 @@
 		$postData = $_POST;
 		if ($postData["namePost"] != "" && $postData["descPost"] != "") {
 			
-		$flag =	addArticle(trim($postData["namePost"]), trim($postData["descPost"]));
-			if($flag) {
-				echo "Success";
-			}
-			else {
-				echo "error";
-			}
+			$flag =	addArticle(trim($postData["namePost"]), trim($postData["descPost"]));
+				if($flag) {
+					
+					header("Location: index.php");
+					exit();
+				}
+				else {
+					echo "error";
+				}
 		}
 		
 	}
