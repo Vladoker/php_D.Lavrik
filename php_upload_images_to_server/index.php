@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <form method="post" enctype="multipart/form-data">
 
-    <input type="file" name="phpimage" id="228">
+    <input type="file" name="phpimage">
     <br>
 
     <button>Загрузить</button>
